@@ -18,7 +18,12 @@ class Timer {
     };
 
     tick = () => {
-         this.timeRemaining = timeRemaining - 1;
+        if (this.timeRemaining <= 0){
+            this.pause();
+        } else {
+            this.timeRemaining = timeRemaining - 1;
+        }
+        
     };
 
     get timeRemaining() {
